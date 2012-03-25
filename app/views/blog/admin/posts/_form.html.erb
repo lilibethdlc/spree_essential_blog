@@ -4,6 +4,12 @@
   <%= error_message_on :post, :title%>
 <% end %>
 
+<%= form.field_container :author_id do %>
+  <%= form.label :author_id, 'Author' %><br />
+  <%= collection_select :post, :author_id, @authors, :id, :full_name, {:include_blank => 'Please select'} %>
+  <%= error_message_on :author_id, :author_id %>
+<% end %>
+
 <%= form.field_container :posted_at do %>
   <%= form.label :posted_at, t("post.posted_at") %><br />
   <%= form.text_field :posted_at, :class => 'text', :value => (@post.posted_at.to_s(:long) unless @post.new_record?) %><br />
