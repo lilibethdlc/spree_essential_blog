@@ -11,8 +11,8 @@
 <% end %>
 
 <%= form.field_container :body do %>
-  <%= form.label :body, t("post.body") %><%= markdown_helper %><br />
-  <%= form.text_area :body  %>
+  <%= form.label :body, t("post.body") %><br />
+  <%= form.text_area :body %>
   <%= error_message_on :post, :body %>
 <% end %>
 
@@ -27,14 +27,14 @@
 <% end %>
 
 <% content_for :head do %>
-  <%= stylesheet_link_tag "markitup.css" %>
-  <%= javascript_include_tag 'date.js', 'jquery.autodate.js', 'jquery.markitup.js', 'markdown.set.js' %>
+  <%= javascript_include_tag 'date.js', 'jquery.autodate.js', 'wymeditor/jquery.wymeditor.min.js' %>
+
   <script type="text/javascript">
   //<![CDATA[
     $(document).ready(function() {
       $('#post_posted_at').autodate();
-      $('#post_body').markItUp(markdownSettings);
-    }); 
+      $('#post_body').wymeditor();
+    });
   //]]>
   </script>
 <% end %>
