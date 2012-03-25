@@ -27,13 +27,12 @@
 <% end %>
 
 <% content_for :head do %>
-  <%= javascript_include_tag 'date.js', 'jquery.autodate.js', 'wymeditor/jquery.wymeditor.min.js' %>
+  <%= javascript_include_tag 'date.js', 'jquery.autodate.js', 'tiny_mce/tiny_mce.js', 'tiny_mce/jquery.tinymce.js' %>
 
   <script type="text/javascript">
   //<![CDATA[
     $(document).ready(function() {
       $('#post_posted_at').autodate();
-      $('#post_body').wymeditor();
     });
   //]]>
   </script>
