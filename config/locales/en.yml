@@ -2,7 +2,7 @@ en:
   post:
     model_name: Article
     title: Title
-    posted_at: Articleed At
+    posted_at: Posted At
     body: Body
     live: Published
     tags: Tags
