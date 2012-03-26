@@ -34,6 +34,10 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def preview
+    body.split[0...20].join(' ')
+  end
+
 	def rendered_preview
     preview = body.split("<!-- more -->")[0]
     render(preview)
